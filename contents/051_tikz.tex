@@ -1,0 +1,154 @@
+\subsection{Tikz}
+\def\Point{36.9}
+
+\subsubsection{Why Tikz?}
+\begin{frame}
+  \frametitle{Why making figures in \LaTeX?}
+
+  \begin{itemize}
+    \item[$+$] adjustability/flexibility
+      \begin{itemize}
+        \item je document opnieuw builden maakt de afbeelding opnieuw: wijzigingen aanbrengen is dus even gemakkelijk als \LaTeX-code aanpassen
+        \item je hebt geen externe software nodig
+      \end{itemize}
+      \pause
+    \item[$+$] consistency
+      \begin{itemize}
+        \item[] lettertypes, kleuren, tekstgroottes, \ldots\ zijn overal hetzelfde
+      \end{itemize}
+      \pause 
+    \item[$+$] integratie met externe tools
+      \begin{itemize}
+        \item[] als je toch externe software gebruikt is er integratie mogelijk
+      \end{itemize}
+      \pause
+    \item[$+$] vector graphics
+      \begin{itemize}
+        \item[] geen problemen met lage resoluties
+        \item[] er kan oneindig ingezoomd worden
+      \end{itemize}
+      \pause
+    \item[$+$] easy to port your text to a slide deck
+      \pause
+    \item[$-$] de leercurve\ldots
+  \end{itemize}
+  \let\thefootnote\relax\footnotetext{Inspired by Tikz workshop by Pieter Belmans (\url{https://github.com/pbelmans/tikz-workshop}).}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\url{TeXample.net}}
+
+  \begin{columns}
+    \begin{column}{.33\textwidth}
+      \begin{enumerate}
+        \item 400+ examples
+        \item sorted in categories
+      \end{enumerate}
+    \end{column}
+
+    \begin{column}{.66\textwidth}
+      \begin{flushright}
+        %\input{tikz/title-graphics.tikz}
+      \end{flushright}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\url{PGFPlots.net} and \href{https://pgfplots.sourceforge.net/gallery.html}{PGFPlots Gallery}}
+
+  \begin{columns}
+    \begin{column}{.45\textwidth}
+      \begin{flushright}
+      \end{flushright}
+    \end{column}
+
+    \begin{column}{.45\textwidth}
+      \begin{flushright}
+        \begin{tikzpicture}
+	\begin{axis}
+        	\addplot+[scatter,
+        		 samples=50,scatter src=y]
+        		  {x^3};
+        	\end{axis}
+        \end{tikzpicture}
+      \end{flushright}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\TeX---\LaTeX\  Stack Excange}
+
+  \small
+  Een vraag-en-antwoordforum voor alle \LaTeX-gerelateerde zaken:
+  \begin{enumerate}
+    \item 60000+ vragen over \LaTeX, \url{http://tex.stackexchange.com/questions?sort=votes} is een goede manier om snel veel over \LaTeX\ te leren
+    \item 7000+ vragen over \TikZ, voor een overzicht zie \url{http://tex.stackexchange.com/questions/tagged/tikz-pgf}
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Example Neural Networks}
+    % \resizebox{!}{0.6\textheight}{%
+    %     \include{contents/tikz-examples/neural-network}
+    % }
+\end{frame}
+
+
+
+\subsubsection{Tikz by example - PGFplots}
+
+\begin{frame}
+  \frametitle{Plotting CSV files}
+  \begin{columns}
+      \begin{column}{.4\textwidth}
+        \inputminted[lastline = 10]{latex}{tikz/pgfplots/data.dat}
+    \end{column}
+    \begin{column}{.6\textwidth}
+      \begin{flushright}
+         \begin{tikzpicture}
+          \begin{axis}[
+            grid=major,
+            xlabel=$x$,
+            ylabel=$y$
+          ]
+            \addplot table[x = x, y = f]
+              {tikz/pgfplots/data.dat};
+            \addlegendentry{$f = x^2-x+4$};
+            \addplot table[x = x, y = g]
+              {tikz/pgfplots/data.dat};
+            \addlegendentry{$g = 0.5x^2-3x+3$};
+          \end{axis}
+        \end{tikzpicture}
+      \end{flushright}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Integratie met externe tools}
+
+  \begin{description}
+    \item[\texttt{matlab2tikz}] \url{https://github.com/nschloe/matlab2tikz}
+      exporteer Matlab-figuren meteen naar \TikZ
+    \pause
+    \item[\texttt{matplotlib2tikz}] \url{https://github.com/nschloe/matplotlib2tikz}
+      exporteer matplotlib-figuren meteen naar \TikZ
+  \end{description}
+\end{frame}
+
+
+\subsubsection{Tikz Externalize in Overleaf}
+
+% NOTE: For TikZ externalization to work on Overleaf the \tikzexternalize command must be given in the project’s main .tex file
+
+% \tikzsetnextfilename{#1}
+
+
+% The option prefix=tikz/ provides the name of a folder (here, tikz) to be used for caching generated (externalized) figures—you will need to create that folder manually in your project. However, before LaTeX (TikZ code) can write to that folder, it needs to contain a file—any (dummy) file will suffice; for example, you can add an empty text file foo.txt in the tikz folder.
+
+\begin{frame}{}
+    \ZeigerdiagrammText{60}{-90}{2.7}{1.8}
+\end{frame}

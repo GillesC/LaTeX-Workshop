@@ -1,0 +1,48 @@
+\section{Master Thesis Template}
+
+
+
+\begin{frame}[fragile]{Now it's your turn}
+\vspace{.5cm}
+
+\begin{itemize}
+	\item Download and compile the master's thesis template at 
+\href{https://iiw.kuleuven.be/studeren/masterproef/sjablonen}{https://iiw.kuleuven.be/studeren/masterproef/sjablonen}
+\item Clean-up the \texttt{.bib} file
+\item Plot a graph using Tikz with your own generated data
+\item Include two pictures and place them side-by-side
+\item Add another reference and cite it in the document.
+\end{itemize}
+\end{frame}
+
+\subsection{Best Practices and Common issues}
+\begin{frame}[fragile]{Best Practices}
+\begin{itemize}
+    \item use \pack{subcaption}, not subfigure package 
+    \item use \pack{biblatex}, not package cite and natbib
+    \item use cleveref
+    \item use siunitx
+    \item use booktabs and tabularx if required
+    \item name your tikz figures (see next section)
+    \item Open issues in the GitHub repo for feature requests or errors.
+    \item structure your text using \verb|\input{}| commands.
+    \item Comment out parts of the thesis to compile quicker (chapter per chapter), also handy when debugging
+\end{itemize}    
+\end{frame}
+
+\begin{frame}{Common issues}
+    \begin{columns}[t]
+        \begin{column}{.45\textwidth}
+            \begin{itemize}
+                \item Copying and pasting resulted in an error. Often Unicode problem. 
+% Add the following in the preamble (with the corresponding Unicode number): \verb|\DeclareUnicodeCharacter{2500} {\color{red} FIX ME!!!!}|.
+                \item Read the log outputs, i.e., errors, when compiling failed. 
+                \item Use of reserved characters: \textbackslash\ \{ \} \$ \& \# \textasciicircum\ \_ \% \textasciitilde\ (in .bib or in text). You need to escape them using \textbackslash or other means.
+            \end{itemize}    
+        \end{column}\hfill
+        \begin{column}{.45\textwidth}
+        % \centering
+        %     \includegraphics[width=0.8\linewidth]{Figures/meme-errors.png}
+         \end{column}
+    \end{columns}
+\end{frame}

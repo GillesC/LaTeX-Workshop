@@ -1,0 +1,290 @@
+% kuleuventheme2 by Janez Kren, December 2017, janez.kren@kuleuven.be, based on:
+% kuleuventheme 1.3 by Roland Pastorino, 2013 roland.pastorino@kuleuven.be / www.rolandpastorino.com
+
+\mode<presentation>
+
+% Theme options
+\def\sedes{n}  % if no option: title pages (default)
+\DeclareOptionBeamer{standard}{\def\sedes{n}}  % normal title
+\DeclareOptionBeamer{sedes}{\def\sedes{y}}  % title pages with sedes
+
+\def\logofile{graphics/KUL.pdf}  % default
+\DeclareOptionBeamer{kulak}{\def\logofile{graphics/KULAK.pdf}}
+\DeclareOptionBeamer{lrd}{\def\logofile{graphics/LRD.png}}
+\DeclareOptionBeamer{kul}{\def\logofile{graphics/KUL.pdf}}
+\ProcessOptionsBeamer
+
+
+% Packages
+\usepackage[T1]{fontenc}
+\usepackage{anyfontsize}
+\usepackage{lmodern}					%text font (Latin Modern)
+\usepackage{tikz}						%inline graphics
+\usetikzlibrary{shapes,shadows,arrows,backgrounds,mindmap,decorations.pathreplacing,positioning}
+
+\pgfdeclarelayer{background layer}
+\pgfdeclarelayer{foreground layer}
+\pgfsetlayers{background layer,main,foreground layer}
+
+ %%		
+ %%  COLOURS and FONT STYLES
+ %%
+
+% Colour dfinitions
+	\definecolor{kul-blue}		{RGB}{29,141,176}		%KUL blue (primair blauw)
+ \definecolor{kul-emph}		{RGB}{	255, 127, 14}
+	\definecolor{kul-secblue}	{RGB}{220,231,240}		%KUL light gray-blue (secundair blauw)
+	\definecolor{kul-dark}		{RGB}{47,77,93}			%KUL dark blue 
+	\definecolor{gray}			{gray}{.5}				%gray
+	\definecolor{lgray}			{gray}{.95}				%light gray for theorem background
+
+% Text colours
+	\hypersetup{colorlinks,linkcolor=kul-blue,urlcolor=kul-blue,citecolor=kul-blue} %link colors
+     
+	\urlstyle{sf}					%url addreses are sans-serif font (not typewritter)
+			
+	\setbeamercolor{normal text}	{fg = black}			%text color
+	\setbeamercolor{frametitle}		{fg=kul-blue}			%frame title color
+	\setbeamercolor{section in toc}{fg=kul-blue}			%toc (section) color
+	\setbeamercolor{section in toc shaded}{fg=kul-blue}		%toc (shaded section) color
+	\setbeamercolor{subsection in toc}{fg=kul-blue}			%toc (section) color
+	\setbeamercolor{subsection in toc shaded}{fg=kul-blue}		%toc (shaded section) color
+	\setbeamercolor{item}			{fg=kul-blue}			%item color
+	\setbeamercolor{subitem}		{fg=kul-blue}			%subitem color
+	\setbeamercolor{subsubitem}		{fg=kul-blue}			%subsubitem color
+	\setbeamercolor{text}			{fg=white,bg=kul-blue}	%text block color
+	\setbeamercolor{caption name}	{fg=black}				%figure and table caption color
+	\setbeamercolor{abstract title}	{fg=kul-blue}			%abstract title color
+	
+	
+%	\setbeamerfont{subsection in toc}{size=\small} % Set subsection ToC to smaller size
+%	\addtobeamertemplate{subsection in toc}{}{\vspace{3mm}} % Adjust the '2mm' as needed
+
+
+% Blocks, theorem-like environments and colorboxes
+	\setbeamerfont{block title} {size=\normalsize}				%block title font size
+	\setbeamercolor{block title}{bg=lgray,fg=kul-blue}			%block title colour
+	\setbeamercolor{block body} {bg=lgray,fg=black}				%block body colour
+	\setbeamertemplate{qed symbol}{\color{kul-blue} $\square$}	%end of proof symbol
+	
+	\setbeamercolor{block title alerted}{bg=white!95!red}				%alertbloc title (red)
+	\setbeamercolor{block body alerted}{bg=white!95!red}				%alertbloc body
+	
+	\setbeamercolor{block title example}{bg=white!95!kul-blue,fg=kul-blue} 	%example block title (blue)
+	\setbeamercolor{block body example}{bg=white!95!kul-blue,fg=black}		%example block body
+	
+	\setbeamercolor{box1}		{fg=white,bg=kul-blue}		
+	\setbeamercolor{box2}		{fg=kul-blue,bg=lgray}			%five different colour schemes for Beamer colour box
+	\setbeamercolor{box3}		{fg=black,bg=lgray}
+	\setbeamercolor{box4}		{fg=red,bg=lgray}	
+	\setbeamercolor{box5}		{fg=white,bg=red}	
+
+	\setbeamercolor{button}		{bg= lgray,fg=kul-blue}			%button frame
+
+
+ %%		
+ %%  INNER THEME
+ %%
+	\setbeamertemplate{sections/subsections in toc}[circle]			%toc symbols
+	\setbeamersize{text margin left=21pt,text margin right=21pt} 	%text margins
+
+	%itemize list
+		\setbeamertemplate{itemize item}[triangle] 			%item symbol (triangle)
+		\setbeamertemplate{itemize subitem}[circle]			%subitem symbol (cirlce)
+		\renewcommand\textbullet{\ensuremath{\bullet}}		%correction for warning for subitem circle bullect
+		\setbeamertemplate{itemize subsubitem}{-}			%subsubitem symbol (short hypthen)
+
+	%enumerate list
+		\setbeamertemplate{enumerate item}{\small  \insertenumlabel  \enspace }		%enumerate symbol
+		\setbeamertemplate{enumerate subitem}{\scriptsize \raisebox{.085em} \insertsubenumlabel } 	%subenumerate symbol
+		\setbeamertemplate{enumerate subsubitem}{\tiny \raisebox{.18em} \insertsubsubenumlabel } 	%subenumerate symbol
+
+
+ %%		
+ %%  OUTER THEME
+ %%
+	\setbeamertemplate{navigation symbols}{} %remove the navigation symbols
+	
+	%head frametitle	
+	\setbeamertemplate{frametitle}
+	{
+		\vspace{18pt}
+		{\large{\thesection.\thesubsection ~ ~ \insertframetitle}} 
+		% section number -- frame title	
+	}
+
+	\defbeamertemplate{footline}{body}
+	{
+	\hypersetup{hidelinks} %disable link colors
+ 
+		\begin{tikzpicture}[remember picture]
+  \begin{pgfonlayer}{background layer}
+		% blue background rectangle
+			\node [fill,fill=kul-blue,minimum width=\paperwidth,minimum height=.08\paperheight,anchor=south west] 
+				at (current page.south west) {};
+		
+		% footnote text
+			\node [white,anchor=west,xshift=.084\paperheight, yshift=.04\paperheight, text depth=0pt] 	
+				at (current page.south west) {\scriptsize \insertframenumber};
+				
+			\node [white,anchor=west,xshift=.15\paperheight, yshift=.04\paperheight, text depth=0pt] 	
+				at (current page.south west) {\scriptsize \insertshorttitle};
+			
+		% KUL logo
+			\node [anchor=east,xshift=-.02\paperheight,yshift=.04\paperheight] at (current page.south east) 
+				{\includegraphics[height=.05\paperheight]{\logofile}};
+			
+   \end{pgfonlayer}
+   \end{tikzpicture}
+   
+		}	
+
+	 %%		
+	 %%  TITLE PAGE (Default)
+	 %%
+\if n\sedes 
+	\setbeamertemplate{title page}
+	{
+	 
+		\begin{tikzpicture}[remember picture,overlay]
+		% blue background mono fill
+		\fill [color=kul-blue]
+			(current page.south east)   rectangle   ([shift={(0,-0.0945\paperheight)}]current page.north west);
+
+		% kul-secblue rectangle
+		\node [fill,fill=kul-secblue,minimum width=\paperwidth,minimum height=0.255\paperheight,anchor=south west] 
+			at (current page.south west) {};
+
+											   				
+		% KUL logo
+		\node [anchor=north west,xshift=0.0525\paperheight,yshift=-.0525\paperheight,inner sep=0pt] 
+			at (current page.north west) 
+			{\includegraphics[height=.105\paperheight]{\logofile}};
+
+		% title graphic (optional)
+		\node [anchor=north east,xshift=-.0525\paperwidth,yshift=.8425\paperheight,inner sep=0pt] 
+			at (current page.south east) 
+			{\inserttitlegraphic};
+
+		% subtitle
+		\node [white, text width=.66\paperwidth, text depth=0pt, 
+			anchor=north west, xshift=.082\paperheight, yshift=.4\paperheight, 
+			font=\fontsize{10}{11}\bfseries] (subtitle)
+		 	at (current page.south west) 
+		 	{\insertsubtitle};
+
+		% title
+		\node [white, text width=.95\paperwidth, minimum height=.12\paperheight, 
+			node distance=3pt, above=of subtitle.north west,anchor=south west, 
+			font=\fontsize{18}{19}\bfseries]
+			{\inserttitle};
+
+		% authors, institure, date   
+		\node [kul-dark, text width=.95\paperwidth, text depth=0pt,
+			anchor=north west, xshift=.082\paperheight, yshift=.24\paperheight, 
+			font=\fontsize{10}{11}] 
+			at (current page.south west) 
+			{\insertauthor 
+			
+			\vspace{1pt} 
+			\insertinstitute 
+			
+			\vspace{1pt} 
+			\insertdate };	
+  
+		\end{tikzpicture}
+	}
+
+\else
+\fi
+
+
+	 %%		
+	 %%  TITLE PAGE  (SEDES VERSION)
+	 %%
+
+\if y\sedes 
+	\setbeamertemplate{title page}
+	{
+
+		\begin{tikzpicture}[remember picture,overlay]
+		% blue background mono fill
+		\fill [color=kul-blue]
+			(current page.south east)   rectangle   ([shift={(0,-0.0945\paperheight)}]current page.north west);
+									   				
+		% KUL logo
+		\node [anchor=north west,xshift=0.0525\paperheight,yshift=-.0525\paperheight,inner sep=0pt] 
+			at (current page.north west) 
+			{\includegraphics[height=.105\paperheight]{\logofile}};
+
+		% Sedes
+		\node [anchor=south east,inner sep=0pt] 
+			at (current page.south east) 
+			{\includegraphics[height=.8\paperheight]{graphics/sedes.png} };
+
+		% subtitle
+		\node [white, text width=.7\paperwidth, text depth=0pt, 
+			anchor=north west, xshift=.082\paperheight, yshift=.5\paperheight, 
+			font=\fontsize{11}{12}\bfseries] (subtitle)
+		 	at (current page.south west) 
+			 	{\insertsubtitle};
+		% title
+		\node [white, text width=.7\paperwidth, minimum height=.12\paperheight, 
+			node distance=3pt, above=of subtitle.north west,anchor=south west, 
+			font=\fontsize{18}{19}\bfseries]
+			{\inserttitle};
+
+		% authors, institure, date   kul-dark
+		\node [white, text width=.7\paperwidth, text depth=0pt,
+			anchor=north west, xshift=.082\paperheight, yshift=.35\paperheight, 
+			font=\fontsize{10}{11}] 
+			at (current page.south west) 
+			{\insertauthor 
+			
+			\vspace{3pt} 
+			\insertinstitute 
+			
+			\vspace{3pt} 
+			\insertdate };	
+			
+		\end{tikzpicture}
+	}
+\else
+\fi
+
+
+ %%		
+ %%  TABLE OF CONTENTS (displayed before each section)
+ %%
+ 
+	\AtBeginSection[] {
+	\begin{frame}[c]
+		\begin{center}
+		    	{
+		    	\setbeamertemplate{subsection in toc}{}
+		    	\hypersetup{hidelinks} %disable link colors
+		    	\setbeamertemplate{section in toc}[sections numbered]
+				\tableofcontents[currentsection, currentsubsection, hideothersubsections]
+				}
+		\end{center}
+	\end{frame} 
+	}
+	
+	% \AtBeginSubsection[] {
+	% \begin{frame}[c]
+	% 	\begin{center}
+	% 	    	{
+ %        \setbeamertemplate{subsection in toc}{\inserttocsectionnumber.\inserttocsubsectionnumber~\inserttocsubsection\par}
+ %        \addtobeamertemplate{subsection in toc}{\vspace{2mm}}{}
+ %        \setbeamerfont{subsection in toc}{size=\footnotesize}
+	% 	    	\hypersetup{hidelinks} %disable link colors
+	% 	    \setbeamertemplate{section in toc}[sections numbered]
+	% 			\tableofcontents[currentsection, currentsubsection, hideothersubsections]
+	% 			}
+	% 	\end{center}
+	% \end{frame}
+	% }
+
+
+\mode
+<all> 

@@ -1,0 +1,90 @@
+
+% NEURAL NETWORK activation
+% https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=1
+\begin{tikzpicture}[x=2.7cm,y=1.6cm]
+  \message{^^JNeural network activation}
+  \def\NI{5} % number of nodes in input layers
+  \def\NO{4} % number of nodes in output layers
+  \def\yshift{0.4} % shift last node for dots
+  
+  % INPUT LAYER
+  \foreach \i [evaluate={\c=int(\i==\NI); \y=\NI/2-\i-\c*\yshift; \index=(\i<\NI?int(\i):"n");}]
+              in {1,...,\NI}{ % loop over nodes
+    \node[node in,outer sep=0.6] (NI-\i) at (0,\y) {$a_{\index}^{(0)}$};
+  }
+  
+  % OUTPUT LAYER
+  \foreach \i [evaluate={\c=int(\i==\NO); \y=\NO/2-\i-\c*\yshift; \index=(\i<\NO?int(\i):"m");}]
+    in {\NO,...,1}{ % loop over nodes
+    \ifnum\i=1 % high-lighted node
+      \node[node hidden]
+        (NO-\i) at (1,\y) {$a_{\index}^{(1)}$};
+      \foreach \j [evaluate={\index=(\j<\NI?int(\j):"n");}] in {1,...,\NI}{ % loop over nodes in previous layer
+        \draw[connect,white,line width=1.2] (NI-\j) -- (NO-\i);
+        \draw[connect] (NI-\j) -- (NO-\i)
+          node[pos=0.50] {\contour{white}{$w_{1,\index}$}};
+      }
+    \else % other light-colored nodes
+      \node[node,blue!20!black!80,draw=myblue!20,fill=myblue!5]
+        (NO-\i) at (1,\y) {$a_{\index}^{(1)}$};
+      \foreach \j in {1,...,\NI}{ % loop over nodes in previous layer
+        %\draw[connect,white,line width=1.2] (NI-\j) -- (NO-\i);
+        \draw[connect,myblue!20] (NI-\j) -- (NO-\i);
+      }
+    \fi
+  }
+  
+  % DOTS
+  \path (NI-\NI) --++ (0,1+\yshift) node[midway,scale=1.2] {$\vdots$};
+  \path (NO-\NO) --++ (0,1+\yshift) node[midway,scale=1.2] {$\vdots$};
+  
+  % EQUATIONS
+  \def\agr#1{{\color{mydarkgreen}a_{#1}^{(0)}}} % green a_i^j
+  \node[below=16,right=11,mydarkblue,scale=0.95] at (NO-1)
+    {$\begin{aligned} %\underset{\text{bias}}{b_1}
+       &= \color{mydarkred}\sigma\left( \color{black}
+            w_{1,1}\agr{1} + w_{1,2}\agr{2} + \ldots + w_{1,n}\agr{n} + b_1^{(0)}
+          \color{mydarkred}\right)\\
+       &= \color{mydarkred}\sigma\left( \color{black}
+            \sum_{i=1}^{n} w_{1,i}\agr{i} + b_1^{(0)}
+           \color{mydarkred}\right)
+     \end{aligned}$};
+  \node[right,scale=0.9] at (1.3,-1.3)
+    {$\begin{aligned}
+      {\color{mydarkblue}
+      \begin{pmatrix}
+        a_{1}^{(1)} \\[0.3em]
+        a_{2}^{(1)} \\
+        \vdots \\
+        a_{m}^{(1)}
+      \end{pmatrix}}
+      &=
+      \color{mydarkred}\sigma\left[ \color{black}
+      \begin{pmatrix}
+        w_{1,1} & w_{1,2} & \ldots & w_{1,n} \\
+        w_{2,1} & w_{2,2} & \ldots & w_{2,n} \\
+        \vdots  & \vdots  & \ddots & \vdots  \\
+        w_{m,1} & w_{m,2} & \ldots & w_{m,n}
+      \end{pmatrix}
+      {\color{mydarkgreen}
+      \begin{pmatrix}
+        a_{1}^{(0)} \\[0.3em]
+        a_{2}^{(0)} \\
+        \vdots \\
+        a_{n}^{(0)}
+      \end{pmatrix}}
+      +
+      \begin{pmatrix}
+        b_{1}^{(0)} \\[0.3em]
+        b_{2}^{(0)} \\
+        \vdots \\
+        b_{m}^{(0)}
+      \end{pmatrix}
+      \color{mydarkred}\right]\\[0.5em]
+      {\color{mydarkblue}\mathbf{a}^{(1)}} % vector (bold)
+      &= \color{mydarkred}\sigma\left( \color{black}
+           \mathbf{W}^{(0)} {\color{mydarkgreen}\mathbf{a}^{(0)}}+\mathbf{b}^{(0)}
+         \color{mydarkred}\right)
+    \end{aligned}$};
+  
+\end{tikzpicture}

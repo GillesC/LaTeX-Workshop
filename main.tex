@@ -1,0 +1,243 @@
+% kuleuventheme2 by Janez Kren, September 2017, janez.kren@kuleuven.be, based on:
+% kuleuventheme 1.3 by Roland Pastorino, 2013 roland.pastorino@kuleuven.be / www.rolandpastorino.com
+
+\documentclass[10pt,t]{beamer}
+\usetheme{kuleuven2}	%THEME OPTIONS for LOGO: kul (default), kulak, lrd,    ; OPTIONS for TITLE PAGE: normal (default), sedes
+\setbeamercovered{transparent}
+
+%%% OTHER SETTINGS
+\usefonttheme[onlymath]{serif}			% math font with serifs, delete to make it sans-serif
+\setbeamertemplate{footline}[body] 		% delete this line to remove footline bar on all frames
+\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter} %enable for widescreen 16:9 ratio
+%\titlegraphic{ \includegraphics[width=.2\paperwidth]{mytitlepagepic.png} } %optional title page image
+
+
+%%% ADDED PACKAGES:
+\usepackage[english]{babel}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\pgfplotsset{ticks=none}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{cmbright}
+\usepackage{csquotes}
+\usepackage{minted}
+\usemintedstyle{vs}
+\usepackage[font=footnotesize]{caption}
+\usepackage{subcaption}
+\usepackage[capitalize]{cleveref}
+\usepackage{xspace}
+\usepackage{tabularx}
+\usepackage{tablefootnote}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{arydshln}
+
+\usepackage{listofitems} % for \readlist to create arrays
+\usetikzlibrary{arrows.meta} % for arrow size
+\usepackage[outline]{contour} % glow around text
+\contourlength{1.4pt}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{backgrounds, calc, decorations.markings, intersections, mindmap, lindenmayersystems, snakes, through, trees}
+\usepackage{pgf}
+\usepackage{pgffor}
+\usepgfmodule{shapes}
+\usepgfmodule{plot}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows}
+\usetikzlibrary{snakes}
+% \usetikzlibrary{external}
+% \tikzexternalize[prefix=tikz/,optimize command away=\includepdf]
+
+\usepackage{fontawesome}
+\newcommand{\github}{GitHub~\faicon{github}}
+
+
+\newcommand{\Gitter}[4]{
+    \draw[very thin,color=gray] (#1,#3) grid (#2,#4);
+}
+\newcommand{\Koordinatenkreuz}[6]{
+    \draw[->, >=latex, color=green!50!black] (#1,0) -- (#2,0) node[right] {#5};
+    \draw[->, >=latex, color=green!50!black] (0,#3) -- (0,#4) node[left] {#6};
+}
+\newcommand{\KoordinatenkreuzOhneLabelsVerschobenKeinPfeil}[5]{
+    \draw[-] (#1,0) -- (#2,0);
+    \draw[-] (#5,#3) -- (#5,#4);
+
+}
+\newcommand{\latex}{\LaTeX}
+\newcommand{\somespace}{\vskip.05\textheight}
+\newcommand{\ZeigerdiagrammText}[4]{
+\begin{tikzpicture}[scale=.72, samples=100, >=latex]
+
+    \def\Alpha{#1}
+    \def\Phase{#2}
+    \def\AmplitudeSpannung{#3}
+    \def\AmplitudeStrom{#4}
+    \def\SpannungsWert{{\AmplitudeSpannung*sin(\Alpha)}}
+    \def\StromWert{{\AmplitudeStrom*sin(\Alpha+\Phase)}}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \def\FarbeSpannung{blue!90!white}
+    \def\FarbeStrom{red!90!white}
+    \def\FarbeWinkelZeichnung{green}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \def\Beta{\Alpha+\Phase}
+    \def\AlphaRad{\Alpha*3.141592654/180}
+    \def\PhaseRad{\Phase*3.141592654/180}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \Gitter{-.1}{7.1}{-3.1}{3.1}
+    \Koordinatenkreuz{-.2}{7.3}{-3.2}{3.3}{$\omega t$}{}
+    \draw (1.570795,0) node[below]{$\frac{\pi}{2}$};
+    \draw (3.14159,0) node[below]{${\pi}$};
+    \draw (4.71238898,0) node[below]{$\frac{3\pi}{2}$};
+    \draw (6.283185307,0) node[below]{${2\pi}$};
+    \draw (-4,0) circle (3cm);
+    \KoordinatenkreuzOhneLabelsVerschobenKeinPfeil{-7.2}{-.8}{-3.6}{3.6}{-4}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % voltage
+    \draw[color=\FarbeSpannung, very thick] plot[id=voltage, domain=0:7] function{\AmplitudeSpannung*sin(x)} node[right] {$U(t)$};
+    % voltage circle
+    \draw[color=\FarbeSpannung, loosely dashed] (-4,0) circle (\AmplitudeSpannung cm);
+    % angle
+    \draw[color=\FarbeWinkelZeichnung!50!black, thick] (\AlphaRad, \SpannungsWert)--(\AlphaRad,\StromWert) node[below=18pt] {$\alpha$};
+    % angle in the circle
+    \filldraw[fill=\FarbeWinkelZeichnung!20,draw=\FarbeWinkelZeichnung!50!black] (-4,0) -- (-3,0) arc (0:\Alpha:1) -- cycle node[right] {$\alpha$};
+    % voltage pointer
+    \draw[<-,color=\FarbeSpannung, very thick] (\Alpha:\AmplitudeSpannung)++(-4,0) --(-4,0);
+    \draw[color=\FarbeSpannung,  dashed] (\Alpha:\AmplitudeSpannung)++(-4,0) -- (\AlphaRad,\SpannungsWert);
+    % current
+    \draw[color=\FarbeStrom, very thick] plot[id=current, domain=0:7] function{\AmplitudeStrom*sin(x+\PhaseRad)} node[right] {$I(t)$};		
+    % current circle
+    \draw[color=\FarbeStrom, loosely dashed]    (-4,0) circle (\AmplitudeStrom cm);
+    % current pointer
+    \draw[<-,color=\FarbeStrom, very thick] (\Beta:\AmplitudeStrom)++(-4,0) --(-4,0);
+    \draw[color=\FarbeStrom,  dashed](\Beta:\AmplitudeStrom)++(-4,0) -- (\AlphaRad,\StromWert);
+    % phase difference
+    \ifthenelse{\Phase<0}{
+        \draw[snake=brace] (pi/2 ,3.3)--(pi/2-\PhaseRad ,3.3) node[above=7pt, left=10pt] {$\phi$};
+    }
+    {
+        \draw[snake=brace] (pi/2-\PhaseRad ,3.3)--(pi/2 ,3.3) node[above=7pt, left=10pt] {$\phi$};
+    }
+    % angular velocity \omega
+    \draw[->, xshift=-4cm]  (120:2.4cm) arc (120:170:2) node[below] {$\omega$};
+\end{tikzpicture}
+}
+
+\colorlet{myred}{red!80!black}
+\colorlet{myblue}{blue!80!black}
+\colorlet{mygreen}{green!60!black}
+\colorlet{myorange}{orange!70!red!60!black}
+\colorlet{mydarkred}{red!30!black}
+\colorlet{mydarkblue}{blue!40!black}
+\colorlet{mydarkgreen}{green!30!black}
+
+% STYLES
+\tikzset{
+  >=latex, % for default LaTeX arrow head
+  node/.style={thick,circle,draw=myblue,minimum size=22,inner sep=0.5,outer sep=0.6},
+  node in/.style={node,green!20!black,draw=mygreen!30!black,fill=mygreen!25},
+  node hidden/.style={node,blue!20!black,draw=myblue!30!black,fill=myblue!20},
+  node convol/.style={node,orange!20!black,draw=myorange!30!black,fill=myorange!20},
+  node out/.style={node,red!20!black,draw=myred!30!black,fill=myred!20},
+  connect/.style={thick,mydarkblue}, %,line cap=round
+  connect arrow/.style={-{Latex[length=4,width=3.5]},thick,mydarkblue,shorten <=0.5,shorten >=1},
+  node 1/.style={node in}, % node styles, numbered for easy mapping with \nstyle
+  node 2/.style={node hidden},
+  node 3/.style={node out}
+}
+\def\nstyle{int(\lay<\Nnodlen?min(2,\lay):3)} % map layer number onto 1, 2, or 3
+
+\PassOptionsToPackage{hidelinks}{hyperref}
+\include{preamble}
+
+
+\newcommand{\comm}[2]{\texttt{\textcolor{blue}{\textbackslash #1}\textcolor{red}{\{}#2\textcolor{red}{\}}}}
+\newcommand{\commo}[1]{\texttt{\textcolor{blue}{\textbackslash #1}}}
+\newcommand{\commop}[3]{\texttt{\textcolor{blue}{\textbackslash #1}[#2]\textcolor{red}{\{}#3\textcolor{red}{\}}}}
+\newcommand{\pack}[1]{
+        \texttt{\textcolor{magenta}{\textbackslash usepackage\{#1\}}}%
+}
+\newcommand{\commopt}[2]{
+        \texttt{\textcolor{blue}{\textbackslash #1}}%
+        \texttt{\textcolor{magenta}{\{#2\}}}%
+}
+\newcommand{\packopt}[2]{
+        \texttt{\textcolor{magenta}{\textbackslash usepackage}}%
+        \texttt{\textcolor{blue}{\lbrack #2\rbrack}}%
+        \texttt{\textcolor{magenta}{\{#1\}}}%
+}
+\newcommand{\env}[3]{\texttt{\textcolor{olive}{\textbackslash begin\{#1\}}[#2]} \texttt{#3} \texttt{\textcolor{olive}{\textbackslash end\{#1\}}}}
+\newcommand{\envt}[3]{\texttt{\textcolor{olive}{\textbackslash begin\{#1\}}\textcolor{red}{\{}#2\textcolor{red}{\}}} \texttt{#3} \texttt{\textcolor{olive}{\textbackslash end\{#1\}}}}
+\newcommand{\envs}[2]{\texttt{\textcolor{olive}{\textbackslash begin\{#1\}}} \texttt{#2} \texttt{\textcolor{olive}{\textbackslash end\{#1\}}}}
+
+\renewcommand{\emph}[1]{\textcolor{kul-blue}{#1}}
+\newcommand{\Emph}[1]{\textcolor{kul-emph}{#1}}
+
+\newcommand\TikZ{Ti\textit{k}Z\xspace}
+
+
+
+%%% TITLE PAGE INFO:
+\title[\LaTeX\ workshop]{\LaTeX\ workshop} %[]] will appear in footline
+\subtitle{From novice to expert, to appreciator.} %Inspired by previous work from Dr.~Ing.~Jens Vankeirsbilck and Ing.\ Emanuele Peschiera
+
+\author{Dr. Gilles Callebaut}
+\institute{KU Leuven Ghent -- Dramco}
+\date{}
+
+
+
+
+\begin{document}
+\defineauthors[false]{research, students}
+\csname beamer@calculateheadfoot\endcsname %recalculate head and foot dimension
+
+\small
+
+\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}
+
+\begin{frame}[fragile]{Overview}
+\tableofcontents[hideallsubsections]
+\end{frame}
+	
+\input{contents/01_why_latex}
+\input{contents/02_installing_latex}
+\input{contents/03_basics}
+\input{contents/05_next_level}
+\input{contents/04_thesis}
+
+
+
+
+\begin{frame}[fragile]{Some interesting packages}
+%\vspace{.5cm}
+\texttt{TikZ} package to draw nice vector figures (\href{https://tikz.net/}{https://tikz.net/})
+\begin{figure}
+	\centering
+	\includegraphics[width=.4\textwidth]{Figures/tikz_ex1}
+	\hskip.08\textwidth
+	\includegraphics[width=.45\textwidth, trim={0cm 0cm 0cm 0cm},clip]{Figures/tikz_ex2}
+\end{figure}
+\texttt{tikzplotlib} package to export data from Python into a TikZ figure
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Acknowledments}
+\begin{itemize}
+    \item This slide deck started from previous work from Dr.~Ing.~Jens Vankeirsbilck and Ing.\ Emanuele Peschiera.
+    \item Thanks to Benjamin J. B. Deutschmann and Thomas Wilding for the beautiful Tikz examples.
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+

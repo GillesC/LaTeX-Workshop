@@ -1,0 +1,58 @@
+
+\section{Why \LaTeX?}
+\begin{frame}[fragile,c]{Why LaTeX?}  %option fragile needed for verbatim environment
+
+\begin{figure}
+% \includegraphics[scale=.3]{Figures/latex_vs_word}
+\begin{tikzpicture}
+    % Axis
+    \draw[->, thick] (0,0) -- (7,0) node[midway, below] {Document complexity};
+    \draw[->, thick] (0,0) -- (0,5) node[midway, above, rotate=90,anchor=south] {Effort};
+    
+    % Word curve: Starts slightly above origin, limited exponential growth
+    \draw[blue, thick, dashed, domain=0:2.9] plot (\x, {0.5 + 0.3*\x*(\x+0.8)});
+    \node[blue] at (3.4,4.2) {impossible to do};
+    \node[blue] at (1.45,2.3) {Word};
+    
+    % LaTeX curve: Starts slightly above origin, linear to flattening
+    \draw[red, thick, domain=0:6, smooth] plot (\x, {0.8 + 0.5*\x - 0.05*\x*\x});
+    \node[red] at (2.8,1.2) {\LaTeX};
+
+    \onslide<2->{\draw[red,fill=red] (0,0.8) circle (.5ex);}
+    \onslide<2->{\draw[blue,fill=blue] (0,0.5) circle (.5ex);}
+    \onslide<3->{\draw[red,fill=red] (2,0.8 + 0.5*2 - 0.05*2*2) circle (.5ex);}
+    \onslide<3->{\draw[blue,fill=blue] (2,2.18) circle (.5ex);}
+    \onslide<3->{ \draw [dashed] (2,0) -- (2,3);}
+
+\end{tikzpicture}
+\end{figure}
+    
+\end{frame}
+
+
+\begin{frame}[fragile,c]{My goals for this workshop}
+\begin{itemize}
+    \item Express sympathy towards \LaTeX 
+    \item Give an overview of the basics and elaborate on common pitfalls and must-have knowledge
+    \item Provide a basis to fall back on (not everything will be covered in detail)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Things on how I am going to convince you to try \LaTeX}
+\pause
+\begin{itemize}[<+,10>]
+    \item You can put text in comments and later retrieve old parts
+    \item You can rearrange text easily by just switching some lines
+    \item You can make unbelievably nice looking professional figures
+    \item Using commands to replace words \research{}
+    \item Abbreviations (and re-using them) \students{}
+    \item Reusing the same colors in text, graphs to depict the same things \research{}
+    \item Math in MS Word is awful.
+    \item Referencing/citing becomes a worry of the past.
+\end{itemize}
+\end{frame}
+
+
+% \begin{frame}[fragile]{Things on how I am going to convince you to try \LaTeX}
+% \input{contents/example-colors}
+% \end{frame}

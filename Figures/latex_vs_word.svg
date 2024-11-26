@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="190mm"
+   height="159mm"
+   viewBox="0 0 190 159"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="latex_vs_word.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.94252245"
+     inkscape:cx="520.41201"
+     inkscape:cy="359.67313"
+     inkscape:window-width="2560"
+     inkscape:window-height="1316"
+     inkscape:window-x="2228"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="0.80000001"
+       markerHeight="0.80000001"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect9"
+       is_visible="true"
+       lpeversion="1.3"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false"
+       uniform="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect8"
+       is_visible="true"
+       lpeversion="1.3"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false"
+       uniform="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect7"
+       is_visible="true"
+       lpeversion="1.3"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false"
+       uniform="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect6"
+       is_visible="true"
+       lpeversion="1.3"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false"
+       uniform="false" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect3"
+       is_visible="true"
+       lpeversion="1.3"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false"
+       uniform="false" />
+    <rect
+       x="375.11404"
+       y="637.69385"
+       width="450.13684"
+       height="63.019157"
+       id="rect3" />
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="0.80000001"
+       markerHeight="0.80000001"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7-3" />
+    </marker>
+    <rect
+       x="375.11404"
+       y="637.69385"
+       width="450.13684"
+       height="63.019157"
+       id="rect3-7" />
+    <rect
+       x="375.11404"
+       y="637.69385"
+       width="450.13684"
+       height="63.019157"
+       id="rect3-5" />
+    <rect
+       x="375.11404"
+       y="637.69385"
+       width="450.13684"
+       height="63.019157"
+       id="rect3-5-6" />
+    <rect
+       x="375.11404"
+       y="637.69385"
+       width="450.13684"
+       height="63.019157"
+       id="rect3-5-2" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-opacity:0.892097;stroke:#000000;stroke-width:1.4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle-3)"
+       d="M 17.833953,136.08926 H 174.64848"
+       id="path1-5" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-60.541185,-30.361976)"
+       id="text3"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif';white-space:pre;shape-inside:url(#rect3);fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.29134;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="375.11328"
+         y="682.08398"
+         id="tspan1">Document complexity</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,25.909529,-89.546292)"
+       id="text3-0"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif';white-space:pre;shape-inside:url(#rect3-5);fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.29134;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="375.11328"
+         y="682.08398"
+         id="tspan2">LaTeX</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-41.456711,-154.91746)"
+       id="text3-0-4"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif';white-space:pre;shape-inside:url(#rect3-5-2);fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.29134;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="375.11328"
+         y="667.28711"
+         id="tspan3">impossible to do</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-50.458341,-120.15305)"
+       id="text3-0-0"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif';white-space:pre;shape-inside:url(#rect3-5-6);fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.29134;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="375.11328"
+         y="682.08398"
+         id="tspan4">Word</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0,-0.26458333,0.26458333,0,-167.5843,190.48513)"
+       id="text3-6"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif';white-space:pre;shape-inside:url(#rect3-7);fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.29134;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="375.11328"
+         y="682.08398"
+         id="tspan5">Effort</tspan></text>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#0d00ff;stroke-width:1.70164;stroke-dasharray:13.6131, 1.70164;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 83.092628,144.90342 C 108.19551,126.57545 133.29839,108.24749 146.04833,91.871271 158.79827,75.495054 159.19526,61.071167 159.59226,46.646991"
+       id="path6"
+       inkscape:path-effect="#path-effect7"
+       inkscape:original-d="m 83.092628,144.90342 c 25.102882,-18.32797 50.205762,-36.65593 75.308642,-54.9839 0.39701,-14.424466 0.79399,-28.848353 1.19099,-43.272529"
+       transform="matrix(0.88366975,0,0,1.0004915,-54.917371,-21.213883)" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#fe0000;stroke-width:1.26058;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 83.092628,116.51823 c 22.654742,-3.49418 45.309482,-6.98836 66.661192,-12.01704 21.35172,-5.028677 41.3996,-11.591589 61.44788,-18.154632"
+       id="path8"
+       inkscape:path-effect="#path-effect9"
+       inkscape:original-d="m 83.092628,116.51823 c 22.654742,-3.49418 45.309482,-6.98836 67.964222,-10.48254 20.04869,-6.563171 40.09657,-13.126087 60.14485,-19.689132"
+       transform="matrix(1.1679067,0,0,1.3793989,-79.045002,-57.822332)" />
+    <path
+       style="fill:none;fill-opacity:0.892097;stroke:#000000;stroke-width:1.4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="M 18.534254,136.10968 V 12.313051"
+       id="path1" />
+  </g>
+</svg>

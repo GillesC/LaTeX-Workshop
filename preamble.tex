@@ -1,0 +1,43 @@
+\usepackage{soul} % for \hl highlighting
+
+
+
+\newcommand{\syntaxHighlight}[1]{\colorbox{black!10}{#1}}
+
+%% to hide a column in table 
+\usepackage{array}
+\newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}}
+
+\usepackage{booktabs}
+\usepackage[dvipsnames,svgnames, table]{xcolor} % Required to specify custom colors
+\usepackage[hidelinks]{hyperref} % hidelinks to remove ugly boxes
+\usepackage{siunitx}
+\DeclareSIUnit{\dBm}{dBm}	                % SI unit "dBm"
+\DeclareSIUnit{\dBi}{dBi}                   % SI unit "dBi"
+\DeclareSIUnit{\dBsm}{dBsm} 
+
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots,dateplot}
+\usetikzlibrary{patterns,shapes.arrows}
+\usetikzlibrary{spy}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{external}
+\usetikzlibrary{calc}
+\usetikzlibrary{shadings}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{decorations.pathreplacing}
+
+\usepackage{pgfplotstable}
+% Enable external data files
+\pgfplotsset{compat=1.18}
+
+\usepackage{soul}
+
+\input{auto_names}
+
+\usepackage[xindy, nonumberlist]{glossaries}
+\makenoidxglossaries%
+%\makeglossaries%
+\loadglsentries{abbr}%
+

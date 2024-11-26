@@ -1,0 +1,74 @@
+% usage:
+% 1. define \author{gilles, author2, author3} after begin document
+% 2. optinally you can print the commands by provding a true, false option:
+%        \author[false]{gilles, author2, author3}, this will not display an overview of the avaiable commands, by default it does.
+% 3. use the created commands, e.g., \gilles{this a colored remark}, this outputs "[gilles: this a colored remark]" in an author-unique color.
+
+ 
+ 
+ 
+ % Required to specify custom colors
+\makeatletter
+% \@ifpackageloaded{xcolor}{%
+\PassOptionsToPackage{dvipsnames,svgnames,table}{xcolor}%
+% }{%
+% \usepackage[dvipsnames,svgnames, table]{xcolor}%
+% }
+\makeatother
+
+
+\usepackage{listofitems}
+\usepackage{pgffor}
+\usepackage{xparse}
+\usepackage{ifthen}
+\usepackage{tikz}
+\usepackage{xspace}
+\usetikzlibrary{external}
+
+\makeatletter
+% Define your own list of colors
+\def\myColorList{LimeGreen,BrickRed,Fuchsia,Bittersweet,YellowOrange, YellowGreen, WildStrawberry, Fuchsia, RedViolet, Periwinkle, PineGreen, OrangeRed, RawSienna, Turquoise, Aquamarine, BlueViolet, BurntOrange, DarkOrchid, TealBlue, Violet, RoyalPurple}
+\readlist\ColorList\myColorList
+
+
+\definecolor{defaultColor}{RGB}{112,45,128}
+\NewDocumentCommand{\roundLabel}{O{defaultColor} m}{%
+\tikzexternaldisable
+    \tikz[baseline=(char.base)]{
+        \node[rectangle, rounded corners=0.65mm, inner sep=0.65mm, fill=#1, draw=#1, text=white, font=\itshape](char) {#2};
+    }%
+\tikzexternalenable
+}
+
+
+% Define the command with an optional parameter
+\NewDocumentCommand{\defineauthors}{ O{true} m }{%
+    \ifthenelse{\equal{#1}{true}}{%
+        % Code for true
+        Personal commands for comments are:
+        \begin{itemize}
+        \foreach \x [count=\xi from 1] in {#2} {   
+            \item \textcolor{\ColorList[\xi]}{\textbackslash\unexpanded\expandafter{\x}\{\}}
+            }
+        \end{itemize}
+        \foreach \x [count=\xi from 1] in {#2} { 
+            \expandafter\xdef\csname\x\endcsname####1{\noexpand\textcolor{\ColorList[\xi]}{\roundLabel[\ColorList[\xi]]{\unexpanded\expandafter{\x}} ####1}}%
+        }
+    }{%
+        % Code for false
+        \foreach \x [count=\xi from 1] in {#2} { 
+            \expandafter\xdef\csname\x\endcsname####1{\noexpand\textcolor{\ColorList[\xi]}{\roundLabel[\ColorList[\xi]]{\unexpanded\expandafter{\x}} ####1}}%
+        }
+    }
+    \foreach \x [count=\xi from 1] in {#2} {
+        \expandafter\xdef\csname at\x\endcsname####1{\noexpand\textcolor{\ColorList[\xi]}{@\x}}%
+    }
+}
+
+% \newcommand{\defineauthors}[1]{
+%     \foreach \x [count=\xi from 1] in {#1} { 
+%     \expandafter\xdef\csname\x\endcsname####1{\noexpand\textcolor{\ColorList[\xi]}{[\unexpanded\expandafter{\x}: ####1]}}%
+%     }
+% }
+\makeatother
+
