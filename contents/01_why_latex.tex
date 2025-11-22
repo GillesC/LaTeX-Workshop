@@ -18,8 +18,8 @@
     \draw[red, thick, domain=0:6, smooth] plot (\x, {0.8 + 0.5*\x - 0.05*\x*\x});
     \node[red] at (2.8,1.2) {\LaTeX};
 
-    \onslide<2->{\draw[red,fill=red] (0,0.8) circle (.5ex);}
-    \onslide<2->{\draw[blue,fill=blue] (0,0.5) circle (.5ex);}
+    \onslide<2>{\draw[red,fill=red] (0,0.8) circle (.5ex);}
+    \onslide<2>{\draw[blue,fill=blue] (0,0.5) circle (.5ex);}
     \onslide<3->{\draw[red,fill=red] (2,0.8 + 0.5*2 - 0.05*2*2) circle (.5ex);}
     \onslide<3->{\draw[blue,fill=blue] (2,2.18) circle (.5ex);}
     \onslide<3->{ \draw [dashed] (2,0) -- (2,3);}
@@ -30,9 +30,11 @@
 \end{frame}
 
 
+\setbeamercovered{transparent}
+
 \begin{frame}[fragile,c]{My goals for this workshop}
 \begin{itemize}
-    \item Express sympathy towards \LaTeX 
+    \item See the beauty and possibilities of \LaTeX 
     \item Give an overview of the basics and elaborate on common pitfalls and must-have knowledge
     \item Provide a basis to fall back on (not everything will be covered in detail)
 \end{itemize}
@@ -40,7 +42,7 @@
 
 \begin{frame}[fragile]{Things on how I am going to convince you to try \LaTeX}
 \pause
-\begin{itemize}[<+,10>]
+\begin{itemize}[<+(0)->]
     \item You can put text in comments and later retrieve old parts
     \item You can rearrange text easily by just switching some lines
     \item You can make unbelievably nice looking professional figures

@@ -3,7 +3,7 @@
 
 \documentclass[10pt,t]{beamer}
 \usetheme{kuleuven2}	%THEME OPTIONS for LOGO: kul (default), kulak, lrd,    ; OPTIONS for TITLE PAGE: normal (default), sedes
-\setbeamercovered{transparent}
+
 
 %%% OTHER SETTINGS
 \usefonttheme[onlymath]{serif}			% math font with serifs, delete to make it sans-serif
@@ -186,11 +186,9 @@
 \title[\LaTeX\ workshop]{\LaTeX\ workshop} %[]] will appear in footline
 \subtitle{From novice to expert, to appreciator.} %Inspired by previous work from Dr.~Ing.~Jens Vankeirsbilck and Ing.\ Emanuele Peschiera
 
-\author{Dr. Gilles Callebaut}
-\institute{KU Leuven Ghent -- Dramco}
+\author{Prof. Dr. Gilles Callebaut}
+\institute{KU Leuven Ghent -- Dramco\\ \somespace \url{https://github.com/GillesC/LaTeX-Workshop}}
 \date{}
-
-
 
 
 \begin{document}
@@ -203,11 +201,20 @@
 	\titlepage
 \end{frame}
 
-\begin{frame}[fragile]{Overview}
-\tableofcontents[hideallsubsections]
+
+\begin{frame}[fragile]{References}
+\begin{itemize}
+    \item Thesis specific: \url{https://dramco edu.github.io/Thesis Tips-and-Tricks}
+    \item Writing documents in \latex:  \url{https://github.com/DRAMCO/writing-scientific-papers-in-latex-tips-and-tricks}
+    \item  \latex\ specific : \url{https://github.com/dramco-edu/LaTex}
+    \item \latex\ Workshop: \url{https://github.com/GillesC/LaTeX-Workshop}
+    \item Overleaf Documentation: \url{https://www.overleaf.com/learn}
+\end{itemize}
 \end{frame}
+
 	
 \input{contents/01_why_latex}
+
 \input{contents/02_installing_latex}
 \input{contents/03_basics}
 \input{contents/05_next_level}
@@ -216,28 +223,38 @@
 
 
 
-\begin{frame}[fragile]{Some interesting packages}
-%\vspace{.5cm}
-\texttt{TikZ} package to draw nice vector figures (\href{https://tikz.net/}{https://tikz.net/})
-\begin{figure}
-	\centering
-	\includegraphics[width=.4\textwidth]{Figures/tikz_ex1}
-	\hskip.08\textwidth
-	\includegraphics[width=.45\textwidth, trim={0cm 0cm 0cm 0cm},clip]{Figures/tikz_ex2}
-\end{figure}
-\texttt{tikzplotlib} package to export data from Python into a TikZ figure
+% \begin{frame}[fragile]{Some interesting packages}
+% %\vspace{.5cm}
+% \texttt{TikZ} package to draw nice vector figures (\href{https://tikz.net/}{https://tikz.net/})
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=.4\textwidth]{Figures/tikz_ex1}
+% 	\hskip.08\textwidth
+% 	\includegraphics[width=.45\textwidth, trim={0cm 0cm 0cm 0cm},clip]{Figures/tikz_ex2}
+% \end{figure}
+% \texttt{tikzplotlib} package to export data from Python into a TikZ figure
 
-\end{frame}
+% \end{frame}
 
 
-
-\begin{frame}[fragile]{Acknowledments}
+\begin{frame}[fragile]{Acknowledgments \& References}
 \begin{itemize}
     \item This slide deck started from previous work from Dr.~Ing.~Jens Vankeirsbilck and Ing.\ Emanuele Peschiera.
     \item Thanks to Benjamin J. B. Deutschmann and Thomas Wilding for the beautiful Tikz examples.
 \end{itemize}
+\somespace
+\begin{itemize}
+    \item Thesis specific: \url{https://dramco edu.github.io/Thesis Tips-and-Tricks}
+    \item Writing documents in \latex:  \url{https://github.com/DRAMCO/writing-scientific-papers-in-latex-tips-and-tricks}
+    \item  \latex\ specific : \url{https://github.com/dramco-edu/LaTex}
+    \item \latex\ Workshop: \url{https://github.com/GillesC/LaTeX-Workshop}
+\end{itemize}
 \end{frame}
 
+
+\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}
+
+
 \end{document}
-
-
