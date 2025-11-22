@@ -12,6 +12,7 @@
 \item Plot a graph using Tikz with your own generated data
 \item Include two pictures and place them side-by-side
 \item Add another reference and cite it in the document.
+\item Add another abbreviation to the \texttt{abbreviations.tex} document and use it in your text (in plural).
 \end{itemize}
 \end{frame}
 
@@ -31,18 +32,18 @@
 \end{frame}
 
 \begin{frame}{Common issues}
-    \begin{columns}[t]
+    \begin{columns}[c]
         \begin{column}{.45\textwidth}
             \begin{itemize}
-                \item Copying and pasting resulted in an error. Often Unicode problem. 
-% Add the following in the preamble (with the corresponding Unicode number): \verb|\DeclareUnicodeCharacter{2500} {\color{red} FIX ME!!!!}|.
+                \item Copying and pasting resulted in an error. Often Unicode problem. \href{https://github.com/DRAMCO/writing-scientific-papers-in-latex-tips-and-tricks?tab=readme-ov-file#finding-weird-unicode}{You can resolve this by declaring it yourself.}
                 \item Read the log outputs, i.e., errors, when compiling failed. 
                 \item Use of reserved characters: \textbackslash\ \{ \} \$ \& \# \textasciicircum\ \_ \% \textasciitilde\ (in .bib or in text). You need to escape them using \textbackslash or other means.
             \end{itemize}    
-        \end{column}\hfill
+        \end{column}
         \begin{column}{.45\textwidth}
-        % \centering
-        %     \includegraphics[width=0.8\linewidth]{Figures/meme-errors.png}
+            \vfill
+            \includegraphics[width=0.8\linewidth]{Figures/meme-errors.png}
+            \vfill
          \end{column}
     \end{columns}
 \end{frame}
