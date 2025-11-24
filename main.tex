@@ -36,6 +36,11 @@
 \usepackage{array}
 \usepackage{arydshln}
 
+\usepackage{chemfig}
+\usepackage[version=4,arrows=pgf-filled,
+textfontname=sffamily,
+mathfontname=mathsf]{mhchem}
+
 \usepackage{listofitems} % for \readlist to create arrays
 \usetikzlibrary{arrows.meta} % for arrow size
 \usepackage[outline]{contour} % glow around text
@@ -189,6 +194,7 @@
 \author{Prof. Dr. Gilles Callebaut}
 \institute{KU Leuven Ghent -- Dramco\\ \somespace \url{https://github.com/GillesC/LaTeX-Workshop}}
 \date{}
+\titlegraphic{\includegraphics[width=0.2\textwidth]{graphics/logo_v2_white_no_bg.pdf}}
 
 
 \begin{document}
@@ -202,15 +208,7 @@
 \end{frame}
 
 
-\begin{frame}[fragile]{References}
-\begin{itemize}
-    \item Thesis specific: \url{https://dramco edu.github.io/Thesis Tips-and-Tricks}
-    \item Writing documents in \latex:  \url{https://github.com/DRAMCO/writing-scientific-papers-in-latex-tips-and-tricks}
-    \item  \latex\ specific : \url{https://github.com/dramco-edu/LaTex}
-    \item \latex\ Workshop: \url{https://github.com/GillesC/LaTeX-Workshop}
-    \item Overleaf Documentation: \url{https://www.overleaf.com/learn}
-\end{itemize}
-\end{frame}
+
 
 	
 \input{contents/01_why_latex}
@@ -244,7 +242,7 @@
 \end{itemize}
 \somespace
 \begin{itemize}
-    \item Thesis specific: \url{https://dramco edu.github.io/Thesis Tips-and-Tricks}
+    \item Thesis specific: \url{https://dramco-edu.github.io/Thesis Tips-and-Tricks}
     \item Writing documents in \latex:  \url{https://github.com/DRAMCO/writing-scientific-papers-in-latex-tips-and-tricks}
     \item  \latex\ specific : \url{https://github.com/dramco-edu/LaTex}
     \item \latex\ Workshop: \url{https://github.com/GillesC/LaTeX-Workshop}

@@ -59,3 +59,25 @@ In-line equation
     \somespace
 	Of course, not possible to refer to these equations as they do not have a number
 \end{frame}
+
+\subsection{Chemistry}
+\begin{frame}[fragile]{Inserting Chemistry formulae}
+\begin{columns}[t]
+		\begin{column}{.5\textwidth}
+			\chemfig{*6((=O)-N(-)-(*5(-N=-N(-)-))=-(=O)-N(-)-)}
+
+            \ce{CO2 + C -> 2 CO}
+            
+		\end{column}
+		\begin{column}{.5\textwidth}
+			
+			\begin{itemize}
+			\item[] \pack{chemfig}
+            \item[] \pack{mhchem}
+			\item[] \verb|\ce{CO2 + C -> 2 CO}| 
+			\end{itemize}
+		\end{column}
+	\end{columns}	
+    \vfill
+    \url{https://www.overleaf.com/learn/latex/Chemistry_formulae}
+\end{frame}

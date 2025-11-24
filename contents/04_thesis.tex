@@ -7,7 +7,10 @@
 
 \begin{itemize}
 	\item Download and compile the master's thesis template at 
-\href{https://iiw.kuleuven.be/studeren/masterproef/sjablonen}{https://iiw.kuleuven.be/studeren/masterproef/sjablonen}
+    \begin{itemize}
+        \item KU Leuven: \url{https://iiw.kuleuven.be/english/students/master-thesis/templates}
+        \item UGent: \url{https://latex.ugent.be/}
+    \end{itemize}
 \item Clean-up the \texttt{.bib} file
 \item Plot a graph using Tikz with your own generated data
 \item Include two pictures and place them side-by-side
@@ -21,11 +24,11 @@
 \begin{itemize}
     \item use \pack{subcaption}, not subfigure package 
     \item use \pack{biblatex}, not package cite and natbib
-    \item use cleveref
-    \item use siunitx
-    \item use booktabs and tabularx if required
-    \item name your tikz figures (see next section)
-    \item Open issues in the GitHub repo for feature requests or errors.
+    \item use \pack{cleveref}, not built-in ref
+    \item use \pack{siunitx}
+    \item use \pack{booktabs} and \pack{tabularx} if required
+    \item name your Tikz figures
+    \item Open issues in the GitHub repo for feature requests or errors. (KU Leuven template and \url{https://github.com/DRAMCO/writing-scientific-papers-in-latex-tips-and-tricks})
     \item structure your text using \verb|\input{}| commands.
     \item Comment out parts of the thesis to compile quicker (chapter per chapter), also handy when debugging
 \end{itemize}    
@@ -35,7 +38,7 @@
     \begin{columns}[c]
         \begin{column}{.45\textwidth}
             \begin{itemize}
-                \item Copying and pasting resulted in an error. Often Unicode problem. \href{https://github.com/DRAMCO/writing-scientific-papers-in-latex-tips-and-tricks?tab=readme-ov-file#finding-weird-unicode}{You can resolve this by declaring it yourself.}
+                \item Copying and pasting resulted in an error. Often Unicode problem. 
                 \item Read the log outputs, i.e., errors, when compiling failed. 
                 \item Use of reserved characters: \textbackslash\ \{ \} \$ \& \# \textasciicircum\ \_ \% \textasciitilde\ (in .bib or in text). You need to escape them using \textbackslash or other means.
             \end{itemize}    
